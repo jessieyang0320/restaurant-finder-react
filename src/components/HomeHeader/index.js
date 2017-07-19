@@ -1,6 +1,7 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.css'
+import {Icon} from 'react-fa'
 
 class HomeHeader extends React.Component {
 	constructor(props,context){
@@ -11,12 +12,15 @@ class HomeHeader extends React.Component {
 		return(
 			<div className="clear-fix">
 				<h1>Home Header </h1>
-				<div className="float-left">New York City</div>
+				<div className="float-left">New York City
+				<Icon className="fa fa-angle-down" />
+				</div>
 				<div className="float-right">
-				   <i className="icon-user"></i>
+				   <Icon className="fa fa-user-circle-o" />
 				</div>
 				<div>
-					<i className="icon-search"></i>
+
+					<Icon className="fa fa-search"/>
 					<input/>
 				</div>
 				
