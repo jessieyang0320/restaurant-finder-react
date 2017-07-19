@@ -10,18 +10,22 @@ class HomeHeader extends React.Component {
 	}
 	render(){
 		return(
-			<div className="clear-fix">
-				<h1>Home Header </h1>
-				<div className="float-left">New York City
-				<Icon className="fa fa-angle-down" />
+			<div id="home-header" className="clear-fix">
+				
+				<div className="home-header-left float-left"> 
+					<span>NYC</span>
+				   <Icon className="fa fa-angle-down" />
 				</div>
-				<div className="float-right">
+
+				<div className="home-header-right float-right">
 				   <Icon className="fa fa-user-circle-o" />
 				</div>
-				<div>
 
-					<Icon className="fa fa-search"/>
-					<input/>
+				<div className="home-header-middle">
+					<div className="search-container">
+						<Icon className="fa fa-search"/>
+						<input type="text" placeholder="type something"/>
+				    </div>
 				</div>
 				
 
