@@ -16,48 +16,16 @@ class App extends Component {
             initDone: false
         }
     }
+
   render() {
     return (
       <div >
-   
-          {
-          	this.state.initDone
-          	? this.props.children
-          	: <div>loading</div>
-          }
+           {this.props.children}
        
 
       </div>
     );
   }
-  ComponentDidMount(){
-  	let cityName = LocalStore.getItem(CITYNAME)
-  	if(cityName ==null) {
-  		cityName = 'NYC'
-  	}
-
-  	this.setState({
-  		initDone: true
-  	})
-  }
+}
   
-}
-
-function mapStateToProps(state){
-	return {
-		
-	}
-
-}
-function mapDispatchToProps(dispatch){
-	return{
-    userInfoActions: bindActionCreators(userInfoActionsFromOtherFile,dispatch)
-	}
-
-
-}
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-	)(App)
-
+  export default App

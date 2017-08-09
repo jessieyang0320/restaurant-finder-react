@@ -14,10 +14,15 @@ class RouterMap extends React.Component {
 	render(){
 		return(
 			<Router history={this.props.history}>
-				
+				<Route path='/' component={App}>
+					<IndexRoute component = {Home}/>
+					<Route path='/city' component={City}/>
+					<Route path='/user' component={User}/>
+					<Route path='/search/:type(/:keyword)' component={Search} />
+					<Route path='/detail/:id' component={Detail} />
+					<Route path='*' component={NotFound} />
 
-
-
+				</Route>
 
 			</Router>
 		)
