@@ -14,16 +14,16 @@ class HomeHeader extends React.Component {
 				
 				<div className="home-header-left float-left"> 
 					<span>{this.props.cityName}</span>
-				   <Icon className="fa fa-angle-down" />
+				   <i className="fa fa-angle-down" />
 				</div>
 
 				<div className="home-header-right float-right">
-				   <Icon className="fa fa-user-circle-o" />
+				   <i className="fa fa-user-circle-o" />
 				</div>
 
 				<div className="home-header-middle">
 					<div className="search-container">
-						<Icon className="fa fa-search"/>
+						<i className="fa fa-search"/>
 						<input type="text" placeholder="type something"/>
 				    </div>
 				</div>
