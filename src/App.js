@@ -45,13 +45,13 @@ class App extends Component {
 
 function mapStateToProps(state){
 	return {
-		userInfoActions: bindActionCreators(userInfoActionsFromOtherFile,dispatch)
+		
 	}
 
 }
 function mapDispatchToProps(dispatch){
 	return{
-
+    userInfoActions: bindActionCreators(userInfoActionsFromOtherFile,dispatch)
 	}
 
 
