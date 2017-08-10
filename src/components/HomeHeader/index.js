@@ -1,7 +1,8 @@
-import React from 'react'
-import PureRenderMixin from 'react-addons-pure-render-mixin'
-import './style.css'
-import {Icon} from 'react-fa'
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import './HomeHeader.css';
+import { Icon } from 'react-fa'
+
 
 class HomeHeader extends React.Component {
 	constructor(props,context){
@@ -14,16 +15,17 @@ class HomeHeader extends React.Component {
 				
 				<div className="home-header-left float-left"> 
 					<span>{this.props.cityName}</span>
-				   <i className="fa fa-angle-down" />
+				   <Icon name = 'user' className="fa fa-angle-down"/>
 				</div>
 
 				<div className="home-header-right float-right">
-				   <i className="fa fa-user-circle-o" />
+				   <Icon name = 'user' className="fa fa-user" />
+				   
 				</div>
 
 				<div className="home-header-middle">
 					<div className="search-container">
-						<i className="fa fa-search"/>
+						<Icon className="fa fa-search"/>
 						<input type="text" placeholder="type something"/>
 				    </div>
 				</div>

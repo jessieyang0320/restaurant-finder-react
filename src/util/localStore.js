@@ -4,7 +4,7 @@ export default {
         try {
             value = localStorage.getItem(key)
         } catch (ex) {
-            // 开发环境下提示error
+            // under development enviroment error
          
         } finally {
             return value

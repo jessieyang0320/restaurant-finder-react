@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin'
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import LocalStore from './util/localStore';
+import { CITYNAME } from './config/localStoreKey';
 import './App.css';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as userInfoActionsFromOtherFile from './actions/userinfo.js';
 // import Home from './containers/Home/index.js'
-// import { connect } from 'react-redux'
-// import LocalStore from './util/localStore.js'
-// import { CITYNAME } from './config/localStoreKey.js'
-// import { bindActionCreators } from 'redux'
-// import * as userInfoActionsFromOtherFile from './actions/userinfo.js'
+
+
 
 class App extends Component {
     constructor(props, context) {
@@ -20,12 +22,32 @@ class App extends Component {
 // the object 
 
     componentDidMount(){
-      var that = this
-      console.log(that)
-      setTimeout(function(){ 
-        that.setState({
+      // var that = this
+      // setTimeout(function(){ 
+      //   that.setState({
+      //     initDone:true
+      //   })},1000)
+// ES6 arrow function
+
+      // get city info from localstorerage 
+      let cityName = LocalStore.getItem(CITYNAME)
+      if(cityName ==null){
+        cityName = 'NYC' // a city by default
+      }
+
+      // store city info in Redux
+      this.props.userInfoActions.update({
+        cityName: cityName
+      })
+
+      setTimeout(()=>{
+        this.setState({
           initDone:true
-        })},1000)
+        })
+      },1000)
+
+
+
 
     }
 
@@ -45,4 +67,39 @@ class App extends Component {
   }
 }
   
-  export default App
+
+// Redux
+
+function mapStateToProps(state){
+    return {
+
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return {
+      userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch)
+    }
+
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+
+  )(App)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
