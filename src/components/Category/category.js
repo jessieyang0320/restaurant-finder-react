@@ -3,8 +3,8 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ReactSwipe from 'react-swipe';
 import { Link } from 'react-router';
-import './category.less';
-import './style.css'
+import './category.css';
+
 
 class Category extends React.Component {
     /*
@@ -22,7 +22,7 @@ class Category extends React.Component {
         const opt = {
             auto: 3000,
             callback: function (index) {
-                // 更新当前轮播图的index
+                // update index of pic
                 this.setState({index: index});
             }.bind(this)
         }
